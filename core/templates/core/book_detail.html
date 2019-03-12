@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Title: {{ book.title }}</h1>
+
+  <p><strong>Author:</strong> <a href="">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Category or Programming Language:</strong> {{ book.category_or_Programming_Language }}</p>
+  <p><strong>Description:</strong> {{ book.description }}</p> 
+  <p><strong>Date Added:</strong> {{ book.date_added }}</p>
+  <p><strong>URL:</strong> {{ book.uRL }}</p>  
+  <p><strong>Slug:</strong> {{ book.slug }}</p>  
+
+{% endblock %}
