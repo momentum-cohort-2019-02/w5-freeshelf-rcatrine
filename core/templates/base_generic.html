@@ -15,17 +15,24 @@
       <div class="col-sm-2">
       {% block sidebar %}
         <dd class="sidebar-nav">
-          <dt><a href="{% url 'index' %}">Home</a></dt>
-          <dt><a href="{% url 'books' %}">All Books</a></dt>
-          <dt><a href="">All Authors</a></dt>
+          <dt><a href="{% url 'books' %}">Home</a></dt>
+          <!-- <dt><a href="{% url 'books' %}">Books</a></dt> -->
 
           <pre>{{value}}</pre>
-          <dt>Search by Category:</dt>
+          <dt>Books by Category:</dt>
           <dt><a href="">AWK</a></dt>
           <dt><a href="">Bash</a></dt>
           <dt><a href="">HTML/CSS</a></dt>
           <dt><a href="">JavaScript</a></dt>
           <dt><a href="">Ruby</a></dt>
+
+          <pre>{{value}}</pre>
+          {% if user.is_authenticated %}
+          <dt>User: {{ user.get_username }}</dt>
+          <dt><a href="{% url 'logout' %}?next={{request.path}}">Logout</a></dt>   
+          {% else %}
+          <dt><a href="{% url 'login' %}?next={{request.path}}">Login</a></dt>   
+          {% endif %}
         </dd>
      {% endblock %}
       </div>

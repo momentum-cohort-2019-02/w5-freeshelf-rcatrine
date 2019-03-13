@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Category - AWK</h1>
+  {% if book_list %}
+  <ul>
+    {% for book in book_list %}
+      <dd>
+        <strong><a href="{% url 'books' %}">  {{ book.title }}</a></strong> by {{book.author}}
+      </dd>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}       
+{% endblock %}
