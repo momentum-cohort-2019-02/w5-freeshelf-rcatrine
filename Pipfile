@@ -5,10 +5,13 @@ verify_ssl = true
 
 [dev-packages]
 prospector = "*"
-pylint = "*"
 
 [packages]
 django = "*"
+django-debug-toolbar = "*"
+django-registration-redux = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
