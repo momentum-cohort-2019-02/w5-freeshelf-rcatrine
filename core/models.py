@@ -1,6 +1,6 @@
 from django.db import models
+# from django.contrib.auth import get_user_model
 
-# Create your models here.
 
 class Author(models.Model):
     """Model representing an author."""
@@ -26,7 +26,7 @@ class Book(models.Model):
     description = models.TextField(max_length=1000, default='N/A', help_text='Enter a description of the book.')
     date_added = models.DateTimeField(auto_now_add=True)
     uRL = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL of the book.')
-    slug = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL slug.')
+    slug = models.SlugField(max_length=1000, default='N/A', help_text='Enter the URL slug.')
     
     def __str__(self):
         """String for representing the Model object."""
@@ -46,5 +46,11 @@ class Category(models.Model):
         """String for representing the Model object."""
         return self.title
 
-# class Favorites(models.Model)
+# class Favorite(models.Model):
+    # user = models.ForeignKey(User, on_delete=modles.CASCADE)
+    # book = models.ForeignKey(Dog, on_delete=models.CASCADE)
+    # favorited_at = models.DateTimeField
+#     pass
+
+# favorited_by = models.ManyToManyField(to=User, related_name='favorite_books', through='Favorite')
     

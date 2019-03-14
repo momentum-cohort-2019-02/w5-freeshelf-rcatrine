@@ -1,7 +1,12 @@
 from django.urls import path
 from . import views
 from django.db import models
-from django.urls import reverse # Used to generate URLs by reversing the URL patterns
+from django.urls import reverse
+
+from django.conf.urls import url
+
+
+
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -9,5 +14,6 @@ urlpatterns = [
     path('book/<int:pk>', views.BookDetailView.as_view(), name='book-detail'),
     path('categories/', views.CategoryListView.as_view(), name='categories'),
     path('categories/<int:pk>', views.CategoryDetailView.as_view(), name='category-detail'),
+    url(r'register/$', views.register, name='register'),
     
 ]

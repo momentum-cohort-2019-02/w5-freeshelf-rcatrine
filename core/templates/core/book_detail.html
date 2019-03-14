@@ -10,4 +10,15 @@
   <p><strong>URL:</strong> {{ book.uRL }}</p>  
   <p><strong>Slug:</strong> {{ book.slug }}</p>  
 
+  <!-- {% if request.user.is_authenticated %}
+  <form action="" method="POST">
+    <button type="submit">
+      {% if book in request.user.favorite_books.all %}
+      Unfavorite
+      {% else %}
+      Favorite 
+    {% endif %}
+    this Book</button>
+  </form> -->
+
 {% endblock %}

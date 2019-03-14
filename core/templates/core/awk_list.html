@@ -6,7 +6,7 @@
   <ul>
     {% for book in book_list %}
       <dd>
-        <strong><a href="{% url 'books' %}">  {{ book.title }}</a></strong> by {{book.author}}
+        <strong><a href="{% url 'category' %}">  {{ book.title }}</a></strong> by {{book.author}}
       </dd>
     {% endfor %}
   </ul>
