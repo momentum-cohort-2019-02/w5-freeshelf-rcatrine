@@ -45,6 +45,76 @@ class Category(models.Model):
     def __str__(self):
         """String for representing the Model object."""
         return self.title
+        
+
+class awk(models.Model):
+    title = models.CharField(max_length=200, default='N/A', help_text='Enter the name of a free to access programming book.')
+    author = models.CharField(max_length=200, default='N/A', help_text='Enter the name of the author.')
+    category_or_Programming_Language = models.CharField(max_length=200, default='N/A', help_text='Enter the category/programming language of the book.')
+    description = models.TextField(max_length=1000, default='N/A', help_text='Enter a description of the book.')
+    date_added = models.DateTimeField(auto_now_add=True)
+    uRL = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL of the book.')
+    slug = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL slug.')
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+
+
+class bash(models.Model):
+    title = models.CharField(max_length=200, default='N/A', help_text='Enter the name of a free to access programming book.')
+    author = models.CharField(max_length=200, default='N/A', help_text='Enter the name of the author.')
+    category_or_Programming_Language = models.CharField(max_length=200, default='N/A', help_text='Enter the category/programming language of the book.')
+    description = models.TextField(max_length=1000, default='N/A', help_text='Enter a description of the book.')
+    date_added = models.DateTimeField(auto_now_add=True)
+    uRL = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL of the book.')
+    slug = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL slug.')
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+
+
+class html(models.Model):
+    title = models.CharField(max_length=200, default='N/A', help_text='Enter the name of a free to access programming book.')
+    author = models.CharField(max_length=200, default='N/A', help_text='Enter the name of the author.')
+    category_or_Programming_Language = models.CharField(max_length=200, default='N/A', help_text='Enter the category/programming language of the book.')
+    description = models.TextField(max_length=1000, default='N/A', help_text='Enter a description of the book.')
+    date_added = models.DateTimeField(auto_now_add=True)
+    uRL = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL of the book.')
+    slug = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL slug.')
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+
+
+class javascript(models.Model):
+    title = models.CharField(max_length=200, default='N/A', help_text='Enter the name of a free to access programming book.')
+    author = models.CharField(max_length=200, default='N/A', help_text='Enter the name of the author.')
+    category_or_Programming_Language = models.CharField(max_length=200, default='N/A', help_text='Enter the category/programming language of the book.')
+    description = models.TextField(max_length=1000, default='N/A', help_text='Enter a description of the book.')
+    date_added = models.DateTimeField(auto_now_add=True)
+    uRL = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL of the book.')
+    slug = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL slug.')
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
+
+
+class ruby(models.Model):
+    title = models.CharField(max_length=200, default='N/A', help_text='Enter the name of a free to access programming book.')
+    author = models.CharField(max_length=200, default='N/A', help_text='Enter the name of the author.')
+    category_or_Programming_Language = models.CharField(max_length=200, default='N/A', help_text='Enter the category/programming language of the book.')
+    description = models.TextField(max_length=1000, default='N/A', help_text='Enter a description of the book.')
+    date_added = models.DateTimeField(auto_now_add=True)
+    uRL = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL of the book.')
+    slug = models.TextField(max_length=1000, default='N/A', help_text='Enter the URL slug.')
+
+    def __str__(self):
+        """String for representing the Model object."""
+        return self.title
 
 # class Favorite(models.Model):
     # user = models.ForeignKey(User, on_delete=modles.CASCADE)

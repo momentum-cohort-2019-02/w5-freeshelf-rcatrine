@@ -1,5 +1,5 @@
 from django.contrib import admin
-from core.models import Author, Book, Category 
+from core.models import Author, Book, awk, bash, html, javascript, ruby 
 
 # Register your models here.
 # admin.site.register(Book)
@@ -17,6 +17,26 @@ class AuthorAdmin(admin.ModelAdmin):
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'author')
 
-@admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
+# @admin.register(Category)
+# class CategoryAdmin(admin.ModelAdmin):
+#     list_display = ('title', 'author')
+
+@admin.register(awk)
+class awkAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author')
+
+@admin.register(bash)
+class bashAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author')
+
+@admin.register(html)
+class htmlAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author')
+
+@admin.register(javascript)
+class javascriptAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author')
+
+@admin.register(ruby)
+class rubyAdmin(admin.ModelAdmin):
     list_display = ('title', 'author')

@@ -9,11 +9,11 @@
   <div class="h4 ph5 flex items-center bg-purple">
     <div><a class="f1 link hover-light-blue white b avenir lh-copy no-underline" href="{% url 'index' %}">freeshelf &nbsp &nbsp &nbsp</a></div>
       <div><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'books' %}">Books</a></div> 
-      <div><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'registration_register' %}?next=/core/awk/">Register</a></div>
+      <div><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'registration_register' %}?next=/core/html/">Register</a></div>
       <div>{% if user.is_authenticated %}
-          <dt><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'auth_logout' %}?next=/core/awk/">Logout</a></dt>   
+          <dt><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'auth_logout' %}?next=/core/html/">Logout</a></dt>   
           {% else %}
-          <dt><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'auth_login' %}?next=/core/awk/">Login</a></dt> 
+          <dt><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'auth_login' %}?next=/core/html/">Login</a></dt> 
           {% endif %}</div>
       <div>{% if user.is_authenticated %}
           <dt class="ph5 avenir white f3 lh-copy">Hello, <a class="b">{{ user.get_username }}</a></dt>
@@ -24,20 +24,20 @@
   
 
   <div class="bb b--light-gray flex items-center">        
-    <div><code><a class="ph5 link grow hover-light-blue purple b avenir f3 lh-copy no-underline" href="{% url 'awk' %}">AWK</a></code></div>
-    <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'bash' %}">Bash</a></code></div>
-    <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'html' %}">HTML/CSS</a></code></div>
-    <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'javascript' %}">JavaScript</a></code></div>
-    <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'ruby' %}">Ruby</a></code></div>
+      <div><code><a class="ph5 link grow hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'awk' %}">AWK</a></code></div>
+      <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'bash' %}">Bash</a></code></div>
+      <div><code><a class="ph5 link hover-light-blue purple b avenir f3 lh-copy no-underline" href="{% url 'html' %}">HTML/CSS</a></code></div>
+      <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'javascript' %}">JavaScript</a></code></div>
+      <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'ruby' %}">Ruby</a></code></div>
   </div>
   <br>
   <br>
 
 
-  <h2 class="ph5 avenir purple f1 lh-title">AWK Books</h2>
-  {% if awk_list %}
+  <h2 class="ph5 avenir purple f1 lh-title">HTML/CSS Books</h2>
+  {% if html_list %}
   <ul>
-    {% for book in awk_list %}
+    {% for book in html_list %}
     <br>
     <div class="ph6 bb b--purple br4 bw1 w-90"><br>
       <dd><strong><a class="avenir f3 red no-underline link hover-light-blue" href="{{ book.uRL }}">  {{ book.title }}</a></strong></dd><br>

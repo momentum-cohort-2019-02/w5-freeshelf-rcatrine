@@ -1,34 +1,49 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% extends "base_generic.html" %}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>Freeshelf</h1>
-  <body>
-  <pre>{{value}}</pre>
-  <h2>Recently added books:</h2>
-  {% if book_list %}
-  <ul>
-    {% for book in book_list %}
-      <pre>{{value}}</pre>
-      <dd><strong><a href="{{ book.uRL }}">  {{ book.title }}</a></strong></dd>
-      <dd><a> <strong>Author: </strong>{{ book.author }}</a></dd>
-      <dd><a> <strong>Description: </strong>{{ book.description }}</a></dd>
-      <dd><a> <strong>Date Added: </strong>{{ book.date_added }}</a></dd>
-      <dd><a> <strong>URL: </strong>{{ book.uRL }}</a></dd>
-      <dd><a> <strong>Slug: </strong>{{ book.slug }}</a></dd>
-      <dd><a> <strong>Category: </strong>{{ book.category_or_Programming_Language }}</a></dd>
-      <pre>{{value}}</pre>
-      
-    {% endfor %}
-  </ul>
-  {% else %}
-    <p>There are no books in the library.</p>
-  {% endif %}       
-{% endblock %} -->
+
+
+  <div class="h4 ph5 flex items-center bg-purple">
+      <div><a class="link hover-light-blue white b avenir f1 lh-title no-underline" href="{% url 'index' %}">freeshelf &nbsp &nbsp &nbsp</a></div>
+      <div><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'books' %}">Books</a></div> 
+      <div><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'registration_register' %}">Register</a></div>
+      <div>{% if user.is_authenticated %}
+          <dt><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'auth_logout' %}?next=/core">Logout</a></dt>   
+          {% else %}
+          <dt><a class="ba br-pill ph5 link hover-light-blue white b avenir f3 lh-copy no-underline" href="{% url 'auth_login' %}">Login</a></dt> 
+          {% endif %}</div>
+      <div>{% if user.is_authenticated %}
+          <dt class="ph5 avenir white f3 lh-copy">Hello, <a class="b">{{ user.get_username }}</a></dt>
+          {% endif %}</div>
+  </div>
+  <br>
+  <br>
+  
+
+  <div class="bb b--light-gray flex items-center">        
+      <div><code><a class="ph5 link grow hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'awk' %}">AWK</a></code></div>
+      <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'bash' %}">Bash</a></code></div>
+      <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'html' %}">HTML/CSS</a></code></div>
+      <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'javascript' %}">JavaScript</a></code></div>
+      <div><code><a class="ph5 link hover-light-blue red b avenir f3 lh-copy no-underline" href="{% url 'ruby' %}">Ruby</a></code></div>
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  
+ 
+
+
+  <center><h2 class="ph5 avenir purple f-headline lh-solid">Welcome to freeshelf.</h2>  
+  <h2 class="ph5 bb h4 b--light-gray w-80 bw1 br-pill avenir red i f1">A free to use open source library.</h2></center><br>
+ 
+  
+
+{% endblock %}
 
 
 
